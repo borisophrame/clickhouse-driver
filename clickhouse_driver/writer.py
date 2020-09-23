@@ -16,7 +16,8 @@ else:
 
 
 def write_binary_str(text, buf):
-    text = text.encode('utf-8')
+    if isinstance(text, str):
+        text = text.encode('utf-8')
     write_binary_bytes(text, buf)
 
 
